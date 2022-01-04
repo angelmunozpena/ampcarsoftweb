@@ -22,27 +22,29 @@
 	<br />
 	<br />
 	<div align="center">
-		<a th:href="@{irAEmpresasFormulario}" th:text="'Nueva empresa'"></a>
+		<a th:href="@{wcochesFormulario}" th:text="'Nuevo coche'"></a>
 	</div>
 	<br />
 	<div class="table-responsive p-5">
 	<table class="table table-dark" align="center" border="1">
 		<thead>
 			<tr>
-				<th>Cif</th>
-				<th>Nombre</th>
-				<th>Dirección</th>
+				<th>Matricula</th>
+				<th>Marca</th>
+				<th>Modelo</th>
+				<th>Potencia</th>
 				<th>Borrar</th>
 			</tr>
 		</thead>
 		<tbody>
-			<tr th:each="c: ${listadoEmpresas}">
-				<td><a th:href="@{seleccionarEmpresa?cif=} + ${c.cif}"
-					th:text="${c.cif}"></a></td>
-				<td th:text="${c.nombre}"></td>
-				<td th:text="${c.direccion}"></td>
-				<td><a th:href="@{borrarEmpresa?cif=} + ${c.cif}"
-					th:text="'Borrar empresa'"></a></td>
+			<tr th:each="c: ${listadoCoches}">
+				<td><a th:href="@{seleccionarCoche?matricula=} + ${c.matricula}"
+					th:text="${c.matricula}"></a></td>
+				<td th:text="${c.marca}"></td>
+				<td th:text="${c.modelo}"></td>
+				<td th:text="${c.potencia}"></td>
+				<td><a th:href="@{borrarCoche?matricula=} + ${c.matricula}"
+					th:text="'Borrar coche'"></a></td>
 			</tr>
 		</tbody>
 	</table>
